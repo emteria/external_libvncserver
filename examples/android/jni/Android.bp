@@ -5,7 +5,7 @@ cc_binary {
 
     local_include_dirs: ["."],
 
-    shared_libs: ["libvncserver"],
+    static_libs: ["libvncserver"],
     host_ldlibs: ["-lz"],
 
 }
