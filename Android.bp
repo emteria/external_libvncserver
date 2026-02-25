@@ -1,13 +1,9 @@
-
-
-cc_library_static {
+cc_library_static  {
     name: "libvncserver",
-    include_dirs: ["external/jpeg"],
     local_include_dirs: [
-        "include",
-        "lib",
         "libvncserver",
-    ] + ["."] + ["common"],
+        "common",
+    ],
 
     srcs: [
         "libvncserver/auth.c",
@@ -45,12 +41,13 @@ cc_library_static {
         "test/bmp.c",
     ],
 
-    static_libs: [
+    shared_libs: [
         "libz",
-        "libpng",
-        "libjpeg",
         "libssl",
+        "libjpeg",
+        "libpng",
     ],
+
     cflags: [
         "-D__ANDROID__",
         "-DHAVE_LIBSSL",
