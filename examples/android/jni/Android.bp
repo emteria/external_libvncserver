@@ -1,0 +1,11 @@
+cc_binary {
+    name: "androidvncserver",
+
+    srcs: ["fbvncserver.c"],
+
+    local_include_dirs: ["."],
+
+    static_libs: ["libvncserver"],
+    host_ldlibs: ["-lz"],
+
+}
